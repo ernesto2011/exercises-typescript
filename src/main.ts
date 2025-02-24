@@ -2,7 +2,7 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
-import { charmander } from './bases/injection.ts'
+import { charmander } from './bases/decoradores2.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>

@@ -33,7 +33,7 @@ export class Pokemon {
     }
 
 }
-const pokeApiAxios = new PokeApiAdapter();
+//const pokeApiAxios = new PokeApiAdapter();
 const pokeApiFetch = new PokeApiFetchAdapter();
 
 export const charmander = new Pokemon( 4, 'Charmander', pokeApiFetch );
