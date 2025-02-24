@@ -1,6 +1,6 @@
 
 import { Move, PokeapiResponse } from '../interfaces/pokeapi-response.interface';
-import { PokeApiAdapter } from '../api/pokeApi.adapter';
+import { HttpAdapter, PokeApiAdapter, PokeApiFetchAdapter } from '../api/pokeApi.adapter';
 
 export class Pokemon {
 
@@ -12,7 +12,7 @@ export class Pokemon {
         public readonly id: number, 
         public name: string,
         // Todo: inyectar dependencias
-        private readonly http: PokeApiAdapter = new PokeApiAdapter(),
+        private readonly http: HttpAdapter
 
     ) {}
 
@@ -33,7 +33,9 @@ export class Pokemon {
     }
 
 }
-const pokeApi = new PokeApiAdapter();
-export const charmander = new Pokemon( 4, 'Charmander', pokeApi );
+const pokeApiAxios = new PokeApiAdapter();
+const pokeApiFetch = new PokeApiFetchAdapter();
+
+export const charmander = new Pokemon( 4, 'Charmander', pokeApiFetch );
 
 charmander.getMoves()
